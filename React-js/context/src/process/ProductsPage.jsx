@@ -1,72 +1,71 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const ProductsPage = () => {
-  //state manaage
-  const [products, setProducts] = useState([]);
+  //state manage
+  const [product, setProduct] = useState([]);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
-  const [cate, setCate] = useState("");
+  const [cat, setCat] = useState("");
 
-  //fetch calling
+  //product fetch calling
   useEffect(() => {
-    fetchProducts();
+    fetchproduct();
   }, []);
 
-  //fetch product
-  const fetchProducts = async () => {
+  //product fetching
+  const fetchproduct = async () => {
     try {
       const response = await fetch("https://dummyjson.com/products?limit=20");
-      if (!response.ok) throw new Error("fetch not found");
+      if (!response.ok) throw new Error("fetch error");
       const result = await response.json();
-      setProducts(result.products);
+      setProduct(result.products);
     } catch (error) {
-      console.log("error msg", error);
+      console.log(`Error msg ${error}`);
     }
   };
 
-  //filtering product
-  const filteredProducts = products
-    .filter((p) => p.title.toLowerCase().includes(search.toLowerCase()))
+  const filterproduct = product
+    .filter((e) => e.title.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => {
       if (sort == "asc") return a.price - b.price;
       if (sort == "desc") return b.price - a.price;
       return 0;
     })
-    .filter((p) => (cate ? p.category === cate : true));
+    .filter((p) => (cat ? p.category === cat : true));
 
-  const cat = [...new Set(products.map((p) => p.category))];
+  const catgorydata = [...new Set(product.map((p) => p.category))];
 
   return (
     <>
       <div>
-        <h1>Products</h1>
+        <h1>product</h1>
 
         <input
           type="text"
-          placeholder="Search Products.."
+          placeholder="Search product..."
           onChange={(e) => setSearch(e.target.value)}
-          style={{ border: "1px solid white" }}
         />
 
         <select name="" id="" onChange={(e) => setSort(e.target.value)}>
-          <option value="">Select one..</option>
+          <option value="">Sorting ...</option>
           <option value="asc">Low to High</option>
           <option value="desc">High to Low</option>
         </select>
 
-        <select name="" id="" onChange={(e) => setCate(e.target.value)}>
-          <option value="">Select One..</option>
-          {cat.map((e, i) => (
+        <select name="" id="" onChange={(e) => setCat(e.target.value)}>
+          <option value="">All Category</option>
+          {catgorydata.map((e, i) => (
             <option value={e} key={i}>
               {e}
             </option>
           ))}
         </select>
 
-        {filteredProducts.map((e, i) => (
+        {filterproduct.map((e, i) => (
           <div key={i}>
-            <img src={e.images?.[0]} alt="" width={200} />
             <h1>{e.title}</h1>
+            <img src={e.images[0]} alt="" width={250} />
             <p>{e.description}</p>
             <p>{e.price}</p>
           </div>
@@ -76,6 +75,85 @@ const ProductsPage = () => {
   );
 };
 export default ProductsPage;
+
+// import { useEffect, useState } from "react";
+
+// const ProductsPage = () => {
+//   //state manaage
+//   const [products, setProducts] = useState([]);
+//   const [search, setSearch] = useState("");
+//   const [sort, setSort] = useState("");
+//   const [cate, setCate] = useState("");
+
+//   //fetch calling
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
+//   //fetch product
+//   const fetchProducts = async () => {
+//     try {
+//       const response = await fetch("https://dummyjson.com/products?limit=20");
+//       if (!response.ok) throw new Error("fetch not found");
+//       const result = await response.json();
+//       setProducts(result.products);
+//     } catch (error) {
+//       console.log("error msg", error);
+//     }
+//   };
+
+//   //filtering product
+//   const filteredProducts = products
+//     .filter((p) => p.title.toLowerCase().includes(search.toLowerCase()))
+//     .sort((a, b) => {
+//       if (sort == "asc") return a.price - b.price;
+//       if (sort == "desc") return b.price - a.price;
+//       return 0;
+//     })
+//     .filter((p) => (cate ? p.category === cate : true));
+
+//   const cat = [...new Set(products.map((p) => p.category))];
+
+//   return (
+//     <>
+//       <div>
+//         <h1>Products</h1>
+
+//         <input
+//           type="text"
+//           placeholder="Search Products.."
+//           onChange={(e) => setSearch(e.target.value)}
+//           style={{ border: "1px solid white" }}
+//         />
+
+//         <select name="" id="" onChange={(e) => setSort(e.target.value)}>
+//           <option value="">Select one..</option>
+//           <option value="asc">Low to High</option>
+//           <option value="desc">High to Low</option>
+//         </select>
+
+//         <select name="" id="" onChange={(e) => setCate(e.target.value)}>
+//           <option value="">Select One..</option>
+//           {cat.map((e, i) => (
+//             <option value={e} key={i}>
+//               {e}
+//             </option>
+//           ))}
+//         </select>
+
+//         {filteredProducts.map((e, i) => (
+//           <div key={i}>
+//             <img src={e.images?.[0]} alt="" width={200} />
+//             <h1>{e.title}</h1>
+//             <p>{e.description}</p>
+//             <p>{e.price}</p>
+//           </div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// };
+// export default ProductsPage;
 
 // import { useEffect, useState } from "react";
 

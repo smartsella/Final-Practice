@@ -16,7 +16,7 @@ const App = () => {
           {/* <Data1 /> */}
           {/* <Data1 /> */}
           {/* <ProductsPage /> */}
-          {/* <Inputhandle /> */}
+          <Inputhandle />
         </CreateContext.Provider>
       </div>
     </>
