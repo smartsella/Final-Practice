@@ -7,7 +7,7 @@ const initialState = {
   role: "Full Stack Developer",
   email: "sellaa@gmail.com",
   phone: "9999999999",
-  city: "Salem",
+  city: "Chennai",
   state: "Tamil Nadu",
   country: "India",
   experience: 1,
