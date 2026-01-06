@@ -99,3 +99,8 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
 } else {
   console.log("non of leap year");
 }
+
+let star = "";
+for (let i = 0; i < 5; i++) {
+  console.log((star = star + "*"));
+}
