@@ -86,9 +86,16 @@
 //   console.log((star = star + "*"));
 // }
 
-let year = 2016;
+// let year = 2016;
+// if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+//   console.log("Leap year");
+// } else {
+//   console.log("None leap year");
+// }
+
+let year = 2026;
 if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
   console.log("Leap year");
 } else {
-  console.log("None leap year");
+  console.log("non of leap year");
 }
