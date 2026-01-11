@@ -1,6 +1,5 @@
-// Dashboard.jsx
+//Dashboard.jsx
 
-// Profile.jsx
 import { useSelector } from "react-redux";
 
 const Dashboard = () => {

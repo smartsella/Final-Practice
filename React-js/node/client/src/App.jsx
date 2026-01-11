@@ -3,16 +3,18 @@ import Signin from "./controller/Sigin";
 import Signup from "./controller/Sigup";
 import Dashboard from "./controller/Dashboard";
 import Errorpage from "./controller/Errorpage";
+import CrudOpr from "./component/CrudOpr";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<Errorpage />} />
-      </Routes>
+      </Routes> */}
+      <CrudOpr />
     </BrowserRouter>
   );
 }
