@@ -4,6 +4,7 @@ import CreateContext from "./prop-drilling/CreateContext";
 import Data1 from "./prop-drilling/Data1";
 import ProductsPage from "./process/ProductsPage";
 import Inputhandle from "./process/Inputhandle";
+import TodoApp from "./process/TodoApp";
 
 const App = () => {
   const [theme, setTheme] = useState("dark");
@@ -16,7 +17,8 @@ const App = () => {
           {/* <Data1 /> */}
           {/* <Data1 /> */}
           {/* <ProductsPage /> */}
-          <Inputhandle />
+          {/* <Inputhandle /> */}
+          <TodoApp />
         </CreateContext.Provider>
       </div>
     </>
