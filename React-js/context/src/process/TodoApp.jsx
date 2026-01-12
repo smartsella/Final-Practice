@@ -1,16 +1,16 @@
-const TodoApp = ()=>{
+// const TodoApp = ()=>{
 
-  //state manage
-  const [todo,]
-  return(
-    <>
-      <div>
+//   //state manage
+//   const [todo,]
+//   return(
+//     <>
+//       <div>
 
-      </div>
-    </>
-  )
-}
-export default TodoApp
+//       </div>
+//     </>
+//   )
+// }
+// export default TodoApp
 
 // import { useState } from "react";
 
