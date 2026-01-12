@@ -1,16 +1,53 @@
-// const TodoApp = ()=>{
+import { useState } from "react";
 
-//   //state manage
-//   const [todo,]
-//   return(
-//     <>
-//       <div>
+const TodoApp = () => {
+  //state manage
+  const [todo, setTodo] = useState([]);
+  const [task, setTask] = useState("");
 
-//       </div>
-//     </>
-//   )
-// }
-// export default TodoApp
+  //submit handle
+  const submithandle = (e) => {
+    e.preventDefault();
+
+    const Tododata = {
+      id: Date.now(),
+      text: task,
+      completed: false,
+    };
+
+    setTodo([...todo, Tododata]);
+    setTask("");
+  };
+
+  //delete one
+  const deletedata = (i) => {
+    setTodo(todo.filter((_, index) => i !== index));
+  };
+
+  return (
+    <>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter node"
+          onChange={(e) => setTask(e.target.value)}
+          value={task}
+        />
+        <button onClick={submithandle}>Submit</button>
+
+        <ul>
+          {todo.map((e, i) => (
+            <li key={i}>
+              <span>{e.text}</span>
+              <button onChange={() => deletedata(i)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
+export default TodoApp;
 
 // import { useState } from "react";
 
