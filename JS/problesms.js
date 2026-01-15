@@ -70,22 +70,22 @@
 // };
 // console.log(countfrequency([2, 3, 4, 1, 8, 9, 3, 5]));
 
-function moveZeros(arr) {
-  let index = 0;
+// function moveZeros(arr) {
+//   let index = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== 0) {
-      arr[index] = arr[i];
-      index++;
-    }
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== 0) {
+//       arr[index] = arr[i];
+//       index++;
+//     }
+//   }
 
-  while (index < arr.length) {
-    arr[index] = 0;
-    index++;
-  }
+//   while (index < arr.length) {
+//     arr[index] = 0;
+//     index++;
+//   }
 
-  return arr;
-}
+//   return arr;
+// }
 
-console.log(moveZeros([0, 1, 0, 3, 12]));
+// console.log(moveZeros([0, 1, 0, 3, 12]));
