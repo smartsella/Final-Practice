@@ -103,14 +103,6 @@ const data = [
     qty: 1,
     price: 58999,
   },
-  {
-    id: 14,
-    city: "Hyderabad",
-    model: "Acer Aspire 7",
-    specs: "Ryzen 5 / 16GB",
-    qty: 1,
-    price: 56499,
-  },
 ];
 
 // //1
