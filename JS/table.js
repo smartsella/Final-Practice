@@ -111,14 +111,6 @@ const data = [
     qty: 1,
     price: 56499,
   },
-  {
-    id: 15,
-    city: "Chennai",
-    model: "Lenovo ThinkPad E14",
-    specs: "i5 / 16GB / 512GB",
-    qty: 1,
-    price: 72999,
-  },
 ];
 
 // //1
