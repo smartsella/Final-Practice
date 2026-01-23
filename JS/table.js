@@ -105,97 +105,97 @@ const data = [
   },
 ];
 
-// //1
-// const location = data.filter((item) => item.city === "Chennai");
-// console.log(location);
+//1
+const location = data.filter((item) => item.city === "Chennai");
+console.log(location);
 
-// //2
-// const highprice = data.filter((item) => item.price > 70000);
-// console.log(highprice);
+//2
+const highprice = data.filter((item) => item.price > 70000);
+console.log(highprice);
 
-// //3
-// const uniquecity = [...new Set(data.map((item) => item.city))];
-// console.log(uniquecity);
+//3
+const uniquecity = [...new Set(data.map((item) => item.city))];
+console.log(uniquecity);
 
-// //4
-// const modell = data.map((item) => item.model);
-// console.log(modell);
+//4
+const modell = data.map((item) => item.model);
+console.log(modell);
 
-// //5
-// const highquetity = data.filter((item) => item.qty > 1);
-// console.log(highquetity);
+//5
+const highquetity = data.filter((item) => item.qty > 1);
+console.log(highquetity);
 
-// //6
-// const sorting = data.sort((a, b) => a.price - b.price);
-// console.log(sorting);
+//6
+const sorting = data.sort((a, b) => a.price - b.price);
+console.log(sorting);
 
-// //7
-// const sortingname = data.sort((a, b) => a.model.localeCompare(b.model));
-// console.log(sortingname);
+//7
+const sortingname = data.sort((a, b) => a.model.localeCompare(b.model));
+console.log(sortingname);
 
-// //8
-// const totalque = data.reduce((acc, cur) => acc + cur.qty, 0);
-// console.log(totalque);
+//8
+const totalque = data.reduce((acc, cur) => acc + cur.qty, 0);
+console.log(totalque);
 
-// //9
-// const totalprice = data.reduce((acc, cur) => acc + cur.price, 0);
-// console.log(totalprice);
+//9
+const totalprice = data.reduce((acc, cur) => acc + cur.price, 0);
+console.log(totalprice);
 
-//10
-// const finding = data.find((item) => item.specs.includes("i5"));
-// console.log(finding);
+10;
+const finding = data.find((item) => item.specs.includes("i5"));
+console.log(finding);
 
-// //11
-// const dellcount = data.filter((item) => item.model.includes("Dell"));
-// console.log(dellcount);
+//11
+const dellcount = data.filter((item) => item.model.includes("Dell"));
+console.log(dellcount);
 
-// //12
-// const group = data.reduce((acc, cur) => {
-//   if (!acc[cur.city]) acc[cur.city] = [];
-//   acc[cur.city].push(cur);
-//   return acc;
-// });
-// console.log(group);
+//12
+const group = data.reduce((acc, cur) => {
+  if (!acc[cur.city]) acc[cur.city] = [];
+  acc[cur.city].push(cur);
+  return acc;
+});
+console.log(group);
 
-// //13
-// const modelll = data.map((i) => ({ model: i.model, price: i.price }));
-// console.log(modelll);
+//13
+const modelll = data.map((i) => ({ model: i.model, price: i.price }));
+console.log(modelll);
 
-// //14
-// const cost = data.some((i) => i.price > 90000);
-// console.log(cost);
+//14
+const cost = data.some((i) => i.price > 90000);
+console.log(cost);
 
-// //15
-// const allabove = data.every((i) => i.price > 30000);
-// console.log(allabove);
+//15
+const allabove = data.every((i) => i.price > 30000);
+console.log(allabove);
 
-// //16
-// const cheapest = data.reduce((min, item) =>
-//   item.price < min.price ? item : min
-// );
+//16
+const cheapest = data.reduce((min, item) =>
+  item.price < min.price ? item : min,
+);
 
-// console.log(cheapest);
+console.log(cheapest);
 
-// //17
-// const expence = data.reduce((max, item) =>
-//   item.price > max.price ? item : max
-// );
-// console.log(expence);
+//17
+const expence = data.reduce((max, item) =>
+  item.price > max.price ? item : max,
+);
+console.log(expence);
 
-// //18
-// const gst = data.map((item) => ({
-//   ...item,
-//   gstprice: Math.round(item.price * 1.18),
-// }));
-// console.log(gst);
+//18
+const gst = data.map((item) => ({
+  ...item,
+  gstprice: Math.round(item.price * 1.18),
+}));
+console.log(gst);
 
-// //19
-// const asobj = data.reduce((acc, cur) => {
-//   acc[cur.id] = cur;
-//   return acc;
-// }, {});
-// console.log(asobj);
+//19
+const asobj = data.reduce((acc, cur) => {
+  acc[cur.id] = cur;
+  return acc;
+}, {});
+console.log(asobj);
 
-// //20
-// const remove = data.filter((item) => item.qty > 1);
-// console.log(remove);
+//20
+const remove = data.filter((item) => item.qty > 1);
+console.log(remove);
