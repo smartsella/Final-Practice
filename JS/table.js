@@ -141,7 +141,7 @@ console.log(totalque);
 const totalprice = data.reduce((acc, cur) => acc + cur.price, 0);
 console.log(totalprice);
 
-10;
+//10
 const finding = data.find((item) => item.specs.includes("i5"));
 console.log(finding);
 

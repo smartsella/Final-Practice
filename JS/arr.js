@@ -50,7 +50,7 @@ const products = [
   { name: "P3", price: 150 },
 ];
 const maxProduct = products.reduce((acc, cur) =>
-  cur.price > acc.price ? cur : acc
+  cur.price > acc.price ? cur : acc,
 );
 console.log("Max Product:", maxProduct);
 
@@ -75,7 +75,7 @@ const items = [
 ];
 console.log(
   "Has Out of Stock:",
-  items.some((i) => i.qty === 0)
+  items.some((i) => i.qty === 0),
 );
 
 // 9. Sort by date (sort)
@@ -95,7 +95,7 @@ const users2 = [
 ];
 console.log(
   "Find User:",
-  users2.find((u) => u.id === 2)
+  users2.find((u) => u.id === 2),
 );
 
 //11. for of used
@@ -106,7 +106,7 @@ for (const arr of forr) {
 }
 
 //12. string method used for of loop
-const str = "selladurai";
-for (const key in str) {
-  console.log(str[key]);
-}
+// const str = "selladurai";
+// for (const key in str) {
+//   console.log(str[key]);
+// }
