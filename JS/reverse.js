@@ -16,9 +16,9 @@ for (let i = 0; i < arr.length; i++) {
   console.log("last");
 }
 
-// const num = 134;
-// console.log(Number(String(num).split("").reverse().join("")));
+const num1 = 134;
+console.log(Number(String(num).split("").reverse().join("")));
 
-// const arr = [1, 2, 1, 3, 3, 4];
+const arr1 = [1, 2, 1, 3, 3, 4];
 
 console.log(arr.filter((v, i) => arr.indexOf(v) !== i));
