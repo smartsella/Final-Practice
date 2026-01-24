@@ -19,15 +19,15 @@ for (let i = 0; i <= 10; i++) {
   console.log(i * 5);
 }
 
-// let fact = 1;
-// for (let i = 1; i <= 5; i++) {
-//   console.log((fact = fact *= i));
-// }
+let fact = 1;
+for (let i = 1; i <= 5; i++) {
+  console.log((fact = fact *= i));
+}
 
-// function num(num) {
-//   return Number(String(num).split("").reverse().join(""));
-// }
-// console.log(num(123));
+function num(num) {
+  return Number(String(num).split("").reverse().join(""));
+}
+console.log(num(123));
 
 let num = 7;
 let count = 0;
