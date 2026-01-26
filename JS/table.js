@@ -47,14 +47,14 @@ const data = [
     qty: 1,
     price: 54999,
   },
-  // {
-  //   id: 7,
-  //   city: "Mumbai",
-  //   model: "HP Victus 16",
-  //   specs: "i5 / 16GB / 512GB",
-  //   qty: 1,
-  //   price: 82999,
-  // },
+  {
+    id: 7,
+    city: "Mumbai",
+    model: "HP Victus 16",
+    specs: "i5 / 16GB / 512GB",
+    qty: 1,
+    price: 82999,
+  },
   {
     id: 8,
     city: "Hyderabad",
