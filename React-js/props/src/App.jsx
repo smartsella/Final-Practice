@@ -16,6 +16,7 @@ import Error from "./pages/Error.jsx";
 import UseReduce from "./commponents/UseReduce.jsx";
 import { CreateContext } from "./UseContext/CreateContext.jsx";
 import Data1 from "./props/Data1.jsx";
+import Todo from "./pages/Todo.jsx";
 
 const App = () => {
   // const user = { name: "sella", age: 21, role: "developer" };
@@ -45,7 +46,7 @@ const App = () => {
           {/* <Route path="/usecontext" element={<UsethatContext />} /> */}
 
           <Route path="*" element={<Error />} />
-          <Route path="/data1" element={<Data1 />} />
+          <Route path="/todo" element={<Todo />} />
         </Routes>
       </CreateContext.Provider>
     </>

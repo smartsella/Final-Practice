@@ -80,8 +80,8 @@ const Navbar = () => {
           <Link to="/usecontext" style={navBtn}>
             UseContext
           </Link>
-          <Link to="/data1" style={navBtn}>
-            Data1
+          <Link to="/todo" style={navBtn}>
+            Todo
           </Link>
         </div>
       </div>
