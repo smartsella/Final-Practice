@@ -36,11 +36,11 @@ for (let i = 0; i <= num; i++) {
     count++;
   }
 }
-if (count === 2) {
-  console.log("prime num");
-} else {
-  console.log("not a prime num");
-}
+// if (count === 2) {
+//   console.log("prime num");
+// } else {
+//   console.log("not a prime num");
+// }
 
 // //----------
 
