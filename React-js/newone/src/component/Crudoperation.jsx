@@ -1,0 +1,94 @@
+import { useState } from "react";
+
+const Crudoperation = () => {
+  //state manage
+  const [form, setForm] = useState({ name: "", age: "", phone: "" });
+  const [data, setData] = useState([]);
+  const [edit, setEdit] = useState(null);
+
+  // input handle
+  const Inputhandle = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  //btnhandle
+  const btnhandle = (e) => {
+    e.preventDefault();
+    if (edit == null) {
+      setData([...data, form]);
+    } else {
+      const update = [...data];
+      update[edit] = form;
+      setData(update);
+      setEdit(null);
+    }
+    //reset
+    setForm({ name: "", age: "", phone: "" });
+  };
+
+  //edit handle
+  const edithandle = (i) => {
+    setForm(data[i]);
+    setEdit(i);
+  };
+
+  //delete handle
+  const deletehandle = (i) => {
+    setData(data.filter((_, index) => i !== index));
+  };
+
+  return (
+    <>
+      <div>
+        <form action="" onSubmit={btnhandle}>
+          <input
+            type="text"
+            placeholder="Enter name"
+            name="name"
+            onChange={Inputhandle}
+            value={form.name}
+          />
+          <input
+            type="text"
+            placeholder="Enter age"
+            name="age"
+            onChange={Inputhandle}
+            value={form.age}
+          />
+          <input
+            type="text"
+            placeholder="Enter phone"
+            name="phone"
+            onChange={Inputhandle}
+            value={form.phone}
+          />
+          <button>{edit == null ? "Submit" : "Add"}</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((e, i) => (
+              <tr key={i}>
+                <td>{e.name}</td>
+                <td>{e.age}</td>
+                <td>{e.phone}</td>
+                <td>
+                  <button onClick={() => edithandle(i)}>Edit</button>
+                  <button onClick={() => deletehandle(i)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+};
+export default Crudoperation;
