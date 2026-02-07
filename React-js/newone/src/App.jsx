@@ -1,11 +1,11 @@
 import InputHandle from "./component/InputHandle";
-import Product from "./component/product";
+import Product from "./component/Product";
 
 const App = () => {
   return (
     <>
       {/* <Crudoperation /> */}
-      {/* <InputHandle /> */}
+      <InputHandle />
       <Product />
     </>
   );
