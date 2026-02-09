@@ -6,12 +6,12 @@ const InputHandle = () => {
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState(null);
 
-  //input handle
+  //input handle..
   const Inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //submit handle
+  //submit handle..
   const btnhandle = (e) => {
     e.preventDefault();
 
