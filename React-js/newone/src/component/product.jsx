@@ -52,10 +52,10 @@ const Product = () => {
       .catch((err) => console.log("Error msg", err));
   }, []);
 
-  // get unique categories
+  // get unique categories...
   const categories = ["all", ...new Set(products.map((p) => p.category))];
 
-  // search + filter + sort logic
+  // search + filter + sort logic...
   const filteredProducts = products
     .filter((p) => p.title.toLowerCase().includes(search.toLowerCase()))
     .filter((p) => (category === "all" ? true : p.category === category))
