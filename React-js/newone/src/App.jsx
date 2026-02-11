@@ -6,7 +6,7 @@ const App = () => {
     <>
       {/* <Crudoperation /> */}
       <InputHandle />
-      <Product />
+      {/* <Product /> */}
     </>
   );
 };
