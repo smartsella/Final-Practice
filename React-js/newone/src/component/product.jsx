@@ -73,7 +73,7 @@ const Product = () => {
     <div style={{ padding: "20px" }}>
       <h1>Products...</h1>
 
-      {/* Controls */}
+      {/* Controls ...*/}
       <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
         <input
           type="text"
@@ -97,7 +97,7 @@ const Product = () => {
         </select>
       </div>
 
-      {/* Products */}
+      {/* Products ...*/}
       <div
         style={{
           display: "grid",
