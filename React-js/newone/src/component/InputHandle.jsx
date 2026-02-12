@@ -7,19 +7,19 @@ const InputHandle = () => {
   const [update, setUpdate] = useState("");
   const [edit, setEdit] = useState(null);
 
-  //input handle
+  //input handle...
   const inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btn handle
+  //btn handle...
   const btnhandle = (e) => {
     e.preventDefault();
 
     if (edit == null) {
       setData([...data, form]);
     } else {
-      const up;
+      const up()
     }
   };
 
