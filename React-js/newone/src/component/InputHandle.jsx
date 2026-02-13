@@ -20,6 +20,8 @@ const InputHandle = () => {
       setData([...data, form]);
     } else {
       const up()
+      console.log("sella smart mass");
+      
     }
   };
 
