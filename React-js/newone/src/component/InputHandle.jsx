@@ -1,18 +1,19 @@
 import { useState } from "react";
 
 const InputHandle = () => {
-  //state manage
+  
+  //state manage...
   const [form, setForm] = useState({ name: "", age: "", phone: "" });
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState("");
   const [edit, setEdit] = useState(null);
 
-  //input handle...
+  //input handle.....
   const inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btn handle...
+  //btn handle.....
   const btnhandle = (e) => {
     e.preventDefault();
 
@@ -25,10 +26,10 @@ const InputHandle = () => {
     }
   };
 
-  //edit handle
+  //edit handle..
   const edithandle = () => {};
 
-  //delete handle
+  //delete handle..
   const deletehandle = () => {};
 
   return (
