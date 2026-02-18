@@ -26,11 +26,11 @@ const InputHandle = () => {
     }
   };
 
-  //edit handle..
-  const edithandle = () => {};
+  //edit handle....
+  const edithandlee = () => {};
 
-  //delete handle..
-  const deletehandle = () => {};
+  //delete handle....
+  const deletehandlee = () => {};
 
   return (
     <>
@@ -76,10 +76,10 @@ const InputHandle = () => {
                 <td>{e.age}</td>
                 <td>{e.phone}</td>
                 <td>
-                  <button onClick={edithandle}>Edit</button>
+                  <button onClick={edithandlee}>Edit</button>
                 </td>
                 <td>
-                  <button onClick={deletehandle}>Delete</button>
+                  <button onClick={deletehandlee}>Delete</button>
                 </td>
               </tr>
             ))}
