@@ -1,36 +1,31 @@
 import { useState } from "react";
 
 const InputHandle = () => {
-  
-  //state manage...
+  //state manage.
   const [form, setForm] = useState({ name: "", age: "", phone: "" });
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState("");
   const [edit, setEdit] = useState(null);
 
-  //input handle.....
+  //input handle.
   const inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btn handle.....
+  //btn handle.
   const btnhandle = (e) => {
     e.preventDefault();
 
     if (edit == null) {
       setData([...data, form]);
-    } else {
-      const up()
-      console.log("sella smart mass");
-      
     }
   };
 
   //edit handle....
-  const edithandlee = () => {};
+  const edithandle = () => {};
 
   //delete handle....
-  const deletehandlee = () => {};
+  const deletehandle = () => {};
 
   return (
     <>
@@ -76,10 +71,10 @@ const InputHandle = () => {
                 <td>{e.age}</td>
                 <td>{e.phone}</td>
                 <td>
-                  <button onClick={edithandlee}>Edit</button>
+                  <button onClick={edithandle}>Edit</button>
                 </td>
                 <td>
-                  <button onClick={deletehandlee}>Delete</button>
+                  <button onClick={deletehandle}>Delete</button>
                 </td>
               </tr>
             ))}
