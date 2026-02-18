@@ -1,80 +1,67 @@
 import { useState } from "react";
 
 const InputHandle = () => {
-  //state manage.
-  const [form, setForm] = useState({ name: "", age: "", phone: "" });
+  //state manage
+  const [form, setForm] = useState({ name: "", email: "", phone: "" });
   const [data, setData] = useState([]);
-  const [update, setUpdate] = useState("");
-  const [edit, setEdit] = useState(null);
 
-  //input handle.
+  //input handle
   const inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btn handle.
-  const btnhandle = (e) => {
+  //btnhandle
+  const submithandle = (e) => {
     e.preventDefault();
-
-    if (edit == null) {
-      setData([...data, form]);
-    }
+    setData([...data, form]);
+    //reset form
+    setForm({ name: "", email: "", phone: "" });
   };
-
-  //edit handle....
-  const edithandle = () => {};
-
-  //delete handle....
-  const deletehandle = () => {};
 
   return (
     <>
       <div>
-        {/* form handle */}
-        <form action="" onSubmit={btnhandle}>
+        <form action="" onSubmit={submithandle}>
           <input
             type="text"
-            placeholder="Enter name"
-            onChange={inputhandle}
             name="name"
             value={form.name}
+            placeholder="Enter the name"
+            onChange={inputhandle}
           />
           <input
             type="text"
-            placeholder="Enter age"
+            name="email"
+            value={form.email}
+            placeholder="Enter the email"
             onChange={inputhandle}
-            name="age"
-            value={form.age}
           />
           <input
             type="text"
-            placeholder="Enter phone"
-            onChange={inputhandle}
             name="phone"
             value={form.phone}
+            placeholder="Enter the phone number"
+            onChange={inputhandle}
           />
           <button>Submit</button>
         </form>
-        {/* table handle */}
         <table>
           <thead>
             <tr>
-              <th>name</th>
-              <th>age</th>
-              <th>phone</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
             </tr>
           </thead>
           <tbody>
             {data.map((e, i) => (
               <tr key={i}>
                 <td>{e.name}</td>
-                <td>{e.age}</td>
+                <td>{e.email}</td>
                 <td>{e.phone}</td>
                 <td>
-                  <button onClick={edithandle}>Edit</button>
-                </td>
-                <td>
-                  <button onClick={deletehandle}>Delete</button>
+                  <button>Edit</button>
+                  <button>Delete</button>
                 </td>
               </tr>
             ))}
