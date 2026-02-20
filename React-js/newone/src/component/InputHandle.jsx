@@ -1,21 +1,41 @@
 import { useState } from "react";
 
 const InputHandle = () => {
-  //state manage..
+  //state manage
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
   const [data, setData] = useState([]);
+  const [edit, setEdit] = useState(null);
 
-  //input handle...
+  //input handle
   const inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btnhandle...
+  //btnhandle
   const submithandle = (e) => {
     e.preventDefault();
-    setData([...data, form]);
-    //reset form..
+    if (edit == null) {
+      setData([...data, form]);
+    } else {
+      const update = [...data];
+      update[edit] = form;
+      setData(update);
+      setEdit(null);
+    }
+
+    //reset form
     setForm({ name: "", email: "", phone: "" });
+  };
+
+  //edit handle
+  const edithandle = (el) => {
+    setForm(data[el]);
+    setEdit(el);
+  };
+
+  //delete handle
+  const deletehandle = (el) => {
+    setData(data.filter((_, index) => index != el));
   };
 
   return (
@@ -43,7 +63,7 @@ const InputHandle = () => {
             placeholder="Enter the phone number"
             onChange={inputhandle}
           />
-          <button>Submit</button>
+          <button>{edit == null ? "Submit" : "Update"}</button>
         </form>
         <table>
           <thead>
@@ -60,8 +80,8 @@ const InputHandle = () => {
                 <td>{e.email}</td>
                 <td>{e.phone}</td>
                 <td>
-                  <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={() => edithandle(i)}>Edit</button>
+                  <button onClick={() => deletehandle(i)}>Delete</button>
                 </td>
               </tr>
             ))}
