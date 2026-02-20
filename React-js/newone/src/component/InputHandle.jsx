@@ -1,20 +1,20 @@
 import { useState } from "react";
 
 const InputHandle = () => {
-  //state manage
+  //state manage..
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
   const [data, setData] = useState([]);
 
-  //input handle
+  //input handle...
   const inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btnhandle
+  //btnhandle...
   const submithandle = (e) => {
     e.preventDefault();
     setData([...data, form]);
-    //reset form
+    //reset form..
     setForm({ name: "", email: "", phone: "" });
   };
 
