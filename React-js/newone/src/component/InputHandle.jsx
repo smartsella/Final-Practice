@@ -6,12 +6,12 @@ const InputHandle = () => {
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState(null);
 
-  //input handle..
+  //input handle
   const inputhandle = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btnhandle..
+  //btnhandle
   const submithandle = (e) => {
     e.preventDefault();
     if (edit == null) {
@@ -23,17 +23,17 @@ const InputHandle = () => {
       setEdit(null);
     }
 
-    //reset form..
+    //reset form
     setForm({ name: "", email: "", phone: "" });
   };
 
-  //edit handle..
+  //edit handle
   const edithandle = (el) => {
     setForm(data[el]);
     setEdit(el);
   };
 
-  //delete handle...
+  //delete handle
   const deletehandle = (el) => {
     setData(data.filter((_, index) => index != el));
   };
