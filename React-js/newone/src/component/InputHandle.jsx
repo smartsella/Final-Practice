@@ -2,7 +2,12 @@ import { useState } from "react";
 
 const InputHandle = () => {
   //state manage
-  const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    mobilenum: "",
+    password: "",
+  });
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState(null);
 
@@ -11,275 +16,104 @@ const InputHandle = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //btnhandle
-  const submithandle = (e) => {
+  //btn handle
+  const btnsubmit = (e) => {
     e.preventDefault();
+
+    //submit data
     if (edit == null) {
       setData([...data, form]);
     } else {
-      const update = [...data];
-      update[edit] = form;
-      setData(update);
+      const updata = [...data];
+      updata[edit] = form;
+      setData(updata);
       setEdit(null);
     }
 
-    //reset form
-    setForm({ name: "", email: "", phone: "" });
+    //reset data
+    setForm({ name: "", email: "", mobilenum: "", password: "" });
   };
 
   //edit handle
-  const edithandle = (el) => {
-    setForm(data[el]);
-    setEdit(el);
+  const edithandle = (i) => {
+    setForm(data[i]);
+    setEdit(i);
   };
 
   //delete handle
-  const deletehandle = (el) => {
-    setData(data.filter((_, index) => index != el));
+  const deletehandle = (i) => {
+    setData(data.filter((_, index) => index != i));
   };
 
   return (
     <>
-      <div>
-        <form action="" onSubmit={submithandle}>
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            placeholder="Enter the name"
-            onChange={inputhandle}
-          />
-          <input
-            type="text"
-            name="email"
-            value={form.email}
-            placeholder="Enter the email"
-            onChange={inputhandle}
-          />
-          <input
-            type="text"
-            name="phone"
-            value={form.phone}
-            placeholder="Enter the phone number"
-            onChange={inputhandle}
-          />
-          <button>{edit == null ? "Submit" : "Update"}</button>
-        </form>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
+      {/* form handle */}
+      <form action="" onSubmit={btnsubmit}>
+        <label htmlFor="">Name :</label>
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          placeholder="Enter the Name"
+          required
+          onChange={inputhandle}
+        />
+        <label htmlFor="">Email :</label>
+        <input
+          type="text"
+          name="email"
+          value={form.email}
+          placeholder="Enter the email"
+          required
+          onChange={inputhandle}
+        />
+        <label htmlFor="">Mobile Num :</label>
+        <input
+          type="text"
+          name="mobilenum"
+          value={form.mobilenum}
+          placeholder="Enter the mobile number"
+          required
+          onChange={inputhandle}
+        />
+        <label htmlFor="">Password : </label>
+        <input
+          type="text"
+          name="password"
+          value={form.password}
+          placeholder="Enter the password"
+          required
+          onChange={inputhandle}
+        />
+        <button>{edit == null ? "Submit" : "Update"}</button>
+      </form>
+
+      {/* tablem handle */}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile Num</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((e, i) => (
+            <tr key={i}>
+              <td>{e.name}</td>
+              <td>{e.email}</td>
+              <td>{e.mobilenum}</td>
+              <td>{e.password}</td>
+              <td>
+                <button onClick={() => edithandle(i)}>Edit</button>
+                <button onClick={() => deletehandle(i)}>Delete</button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {data.map((e, i) => (
-              <tr key={i}>
-                <td>{e.name}</td>
-                <td>{e.email}</td>
-                <td>{e.phone}</td>
-                <td>
-                  <button onClick={() => edithandle(i)}>Edit</button>
-                  <button onClick={() => deletehandle(i)}>Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 };
 export default InputHandle;
-
-// import { useState } from "react";
-
-// const InputHandle = () => {
-//   //state manage
-//   const [form, setForm] = useState({ name: "", age: "", phone: "" });
-//   const [data, setData] = useState([]);
-//   const [edit, setEdit] = useState(null);
-
-//   //input handle..
-//   const Inputhandle = (e) => {
-//     setForm({ ...form, [e.target.name]: e.target.value });
-//   };
-
-//   //submit handle..
-//   const btnhandle = (e) => {
-//     e.preventDefault();
-
-//     if (edit == null) {
-//       setData([...data, form]);
-//     } else {
-//       const updata = [...data];
-//       updata[edit] = form;
-//       setData(updata);
-//       setEdit(null);
-//     }
-
-//     //reset data
-//     setForm({ name: "", age: "", phone: "" });
-//   };
-
-//   // edit handle
-//   const edithandle = (e) => {
-//     setForm(data[e]);
-//     setEdit(e);
-//   };
-
-//   // delethandle
-//   const deletehandle = (e) => {
-//     setData(data.filter((_, index) => index !== e));
-//   };
-
-//   return (
-//     <>
-//       <form action="" onSubmit={btnhandle}>
-//         <input
-//           type="text"
-//           placeholder="Enter the name"
-//           name="name"
-//           onChange={Inputhandle}
-//           value={form.name}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Enter the age"
-//           name="age"
-//           onChange={Inputhandle}
-//           value={form.age}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Enter the phone number"
-//           name="phone"
-//           onChange={Inputhandle}
-//           value={form.phone}
-//         />
-//         <button>Submit</button>
-//       </form>
-
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Name</th>
-//             <th>Age</th>
-//             <th>Phone</th>
-//             <th>Action</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {data.map((e, i) => (
-//             <tr key={i}>
-//               <td>{e.name}</td>
-//               <td>{e.age}</td>
-//               <td>{e.phone}</td>
-//               <td>
-//                 <button onClick={() => edithandle(i)}>Edit</button>
-//                 <button onClick={() => deletehandle(i)}>Delete</button>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//     </>
-//   );
-// };
-// export default InputHandle;
-
-// import { useState } from "react";
-
-// const Crudoperation = () => {
-//   //state manage
-//   const [form, setForm] = useState({ name: "", age: "", phone: "" });
-//   const [data, setData] = useState([]);
-//   const [edit, setEdit] = useState(null);
-
-//   // input handle
-//   const Inputhandle = (e) => {
-//     setForm({ ...form, [e.target.name]: e.target.value });
-//   };
-
-//   //btnhandle
-//   const btnhandle = (e) => {
-//     e.preventDefault();
-//     if (edit == null) {
-//       setData([...data, form]);
-//     } else {
-//       const update = [...data];
-//       update[edit] = form;
-//       setData(update);
-//       setEdit(null);
-//     }
-//     //reset
-//     setForm({ name: "", age: "", phone: "" });
-//   };
-
-//   //edit handle
-//   const edithandle = (i) => {
-//     setForm(data[i]);
-//     setEdit(i);
-//   };
-
-//   //delete handle
-//   const deletehandle = (i) => {
-//     setData(data.filter((_, index) => i !== index));
-//   };
-
-//   return (
-//     <>
-//       <div>
-//         <form action="" onSubmit={btnhandle}>
-//           <input
-//             type="text"
-//             placeholder="Enter name"
-//             name="name"
-//             onChange={Inputhandle}
-//             value={form.name}
-//           />
-//           <input
-//             type="text"
-//             placeholder="Enter age"
-//             name="age"
-//             onChange={Inputhandle}
-//             value={form.age}
-//           />
-//           <input
-//             type="text"
-//             placeholder="Enter phone"
-//             name="phone"
-//             onChange={Inputhandle}
-//             value={form.phone}
-//           />
-//           <button>{edit == null ? "Submit" : "Add"}</button>
-//         </form>
-//         <table>
-//           <thead>
-//             <tr>
-//               <th>Name</th>
-//               <th>Age</th>
-//               <th>Phone</th>
-//               <th>Action</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {data.map((e, i) => (
-//               <tr key={i}>
-//                 <td>{e.name}</td>
-//                 <td>{e.age}</td>
-//                 <td>{e.phone}</td>
-//                 <td>
-//                   <button onClick={() => edithandle(i)}>Edit</button>
-//                   <button onClick={() => deletehandle(i)}>Delete</button>
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//     </>
-//   );
-// };
-// export default Crudoperation;
