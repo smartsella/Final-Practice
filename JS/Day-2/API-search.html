@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>User Search</title>
+  </head>
+  <body>
+    <h2>User Search API</h2>
+
+    <input type="text" id="search" placeholder="Search User" />
+
+    <ul id="userList"></ul>
+
+    <script>
+      let users = [];
+
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((data) => {
+          users = data;
+
+          displayUsers(users);
+        });
+
+      document.getElementById("search").addEventListener("input", function () {
+        let searchText = this.value.toLowerCase();
+
+        let filteredUsers = users.filter((user) =>
+          user.name.toLowerCase().includes(searchText),
+        );
+
+        displayUsers(filteredUsers);
+      });
+
+      function displayUsers(userArray) {
+        let userList = document.getElementById("userList");
+
+        userList.innerHTML = "";
+
+        userArray.forEach((user) => {
+          userList.innerHTML += `<li>${user.name}</li>`;
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Todo App</title>
+  </head>
+  <body>
+    <h2>Todo Task Counter</h2>
+
+    <input type="text" id="task" placeholder="Enter Task" />
+
+    <button onclick="addTask()">Add Task</button>
+
+    <h3 id="count">Total Tasks: 0</h3>
+
+    <ul id="taskList">
+      <li>No Tasks Available</li>
+    </ul>
+
+    <script>
+      let tasks = [];
+
+      function addTask() {
+        let taskInput = document.getElementById("task");
+
+        let task = taskInput.value.trim();
+
+        if (task === "") {
+          return;
+        }
+
+        tasks.push(task);
+
+        taskInput.value = "";
+
+        displayTasks();
+      }
+
+      function deleteTask(index) {
+        tasks.splice(index, 1);
+
+        displayTasks();
+      }
+
+      function displayTasks() {
+        let taskList = document.getElementById("taskList");
+
+        taskList.innerHTML = "";
+
+        if (tasks.length === 0) {
+          taskList.innerHTML = "<li>No Tasks Available</li>";
+        }
+
+        tasks.forEach((task, index) => {
+          taskList.innerHTML += `<li>
+            ${task}
+            <button
+            onclick="deleteTask(${index})">
+            Delete
+            </button>
+        </li>`;
+        });
+
+        document.getElementById("count").textContent =
+          `Total Tasks: ${tasks.length}`;
+      }
+    </script>
+  </body>
+</html>

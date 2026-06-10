@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Employee Salary Bonus</title>
+  </head>
+  <body>
+    <h2>Employee Salary Bonus</h2>
+
+    <input type="text" id="employee" placeholder="Employee Name" />
+
+    <br /><br />
+
+    <input type="number" id="salary" placeholder="Salary" />
+
+    <br /><br />
+
+    <button onclick="calculateBonus()">Calculate Bonus</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+      function calculateBonus() {
+        let employee = document.getElementById("employee").value;
+
+        let salary = Number(document.getElementById("salary").value);
+
+        let bonus = 0;
+
+        if (salary > 30000) {
+          bonus = 5000;
+        } else if (salary > 20000) {
+          bonus = 3000;
+        } else {
+          bonus = 1000;
+        }
+
+        let finalSalary = salary + bonus;
+
+        document.getElementById("result").innerHTML = `Employee: ${employee}<br>
+     Bonus: ₹${bonus}<br>
+     Final Salary: ₹${finalSalary}`;
+      }
+    </script>
+  </body>
+</html>

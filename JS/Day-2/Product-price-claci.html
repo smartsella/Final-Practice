@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Product Price Calculator</title>
+  </head>
+  <body>
+    <h2>Product Price Calculator</h2>
+
+    <input type="text" id="product" placeholder="Product Name" /><br />
+
+    <input type="number" id="price" placeholder="Price" /><br />
+
+    <input type="number" id="quantity" placeholder="Quantity" /><br />
+
+    <button onclick="calculateTotal()">Calculate</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+      function calculateTotal() {
+        let product = document.getElementById("product").value;
+
+        let price = Number(document.getElementById("price").value);
+
+        let quantity = Number(document.getElementById("quantity").value);
+
+        let total = price * quantity;
+
+        let message = `Product: ${product}<br>Total: ₹${total}`;
+
+        if (total > 5000) {
+          message += "<br>Discount Eligible";
+        }
+
+        document.getElementById("result").innerHTML = message;
+      }
+    </script>
+  </body>
+</html>
