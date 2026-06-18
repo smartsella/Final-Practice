@@ -97,7 +97,7 @@ const App = () => {
           <input
             type="text"
             name="name"
-            placeholder="Employee Name"
+            placeholder="Enter Employee Name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -106,7 +106,7 @@ const App = () => {
           <input
             type="email"
             name="email"
-            placeholder="Email Address"
+            placeholder=" Enter Email Address"
             value={formData.email}
             onChange={handleChange}
             required
@@ -115,7 +115,7 @@ const App = () => {
           <input
             type="text"
             name="department"
-            placeholder="Department"
+            placeholder=" Enter Department"
             value={formData.department}
             onChange={handleChange}
             required
@@ -124,7 +124,7 @@ const App = () => {
           <input
             type="number"
             name="salary"
-            placeholder="Salary"
+            placeholder="Enter Salary"
             value={formData.salary}
             onChange={handleChange}
             required
