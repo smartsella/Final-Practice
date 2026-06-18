@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import API from "./api";
 import "./App.css";
 
-function App() {
+const App = () => {
   const COMPANY_ID = "TCS";
   const [formData, setFormData] = useState({
     name: "",
@@ -180,6 +180,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
