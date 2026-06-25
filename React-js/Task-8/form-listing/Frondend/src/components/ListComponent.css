@@ -1,0 +1,172 @@
+.list-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.list-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  padding: 40px;
+}
+
+.forms-list {
+  display: grid;
+  gap: 15px;
+}
+
+.form-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.form-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.view-mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.form-info {
+  flex: 1;
+}
+
+.form-info h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.form-info p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.form-info .date {
+  color: #999;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0b7dda;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #da190b;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+.cancel-btn {
+  background-color: #999;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #666;
+}
+
+.edit-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.edit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.edit-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.edit-group input,
+.edit-group textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.edit-group input:focus,
+.edit-group textarea:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.3);
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-buttons button {
+  flex: 1;
+}
+
+.error {
+  color: #f44336;
+  text-align: center;
+  padding: 15px;
+  background-color: #ffebee;
+  border-radius: 4px;
+}
